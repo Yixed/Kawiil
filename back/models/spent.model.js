@@ -26,4 +26,4 @@ const SpentSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('Spent', _SpentSchema);
+module.exports = mongoose.model('Spent', SpentSchema);
