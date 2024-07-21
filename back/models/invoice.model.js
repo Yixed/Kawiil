@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const InvoiceSchema = new Schema({
+const FacturaSchema = new Schema({
   usuarioId: {
     type: Schema.Types.ObjectId,
     ref: 'Usuario',
@@ -25,4 +25,4 @@ const InvoiceSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('Invoice', InvoiceSchema);
+module.exports = mongoose.model('Factura', FacturaSchemaSchema);

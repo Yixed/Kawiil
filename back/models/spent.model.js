@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const SpentSchema = new Schema({
+const GastoSchema = new Schema({
   usuarioId: {
     type: Schema.Types.ObjectId,
     ref: 'Usuario',
@@ -26,4 +26,4 @@ const SpentSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('Spent', SpentSchema);
+module.exports = mongoose.model('Gasto', GastoSchema);
