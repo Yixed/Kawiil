@@ -15,7 +15,7 @@ const InvoiceSchema = new Schema({
     type: Date,
     required: true
   },
-  monto: {
+  importe: {
     type: Number,
     required: true
   },
@@ -25,4 +25,4 @@ const InvoiceSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('invoice', InvoiceSchemaSchema);
+module.exports = mongoose.model('invoice', InvoiceSchema);
