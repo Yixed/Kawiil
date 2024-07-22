@@ -1,16 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-app',
   standalone: true,
-  imports: [RouterOutlet],
-  template: `<h1>{{ title }}</h1>`,
+  imports: [],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'k-awiil';
+
 }
-
-
