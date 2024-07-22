@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { GastoService } from '../services/gasto.service';
+import { Component, inject, OnInit } from '@angular/core';
+import { GastoService } from '../../services/spent/gasto.service';
 
 @Component({
   selector: 'app-gestion-gastos',

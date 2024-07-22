@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { InformeService } from '../services/informe.service';
+import { InformeService } from '../../services/reports/informe.service';
 
 @Component({
   selector: 'app-informe-ventas',

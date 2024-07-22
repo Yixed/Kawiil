@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FacturaService } from '../services/factura.service';
+import { FacturaService } from '../../services/invoices/factura.service';
 
 @Component({
   selector: 'app-subir-factura',
