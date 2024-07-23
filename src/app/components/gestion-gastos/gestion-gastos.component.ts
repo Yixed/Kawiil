@@ -3,8 +3,9 @@ import { GastoService } from '../../services/spent/gasto.service';
 
 @Component({
   selector: 'app-gestion-gastos',
+  standalone: true,
   templateUrl: './gestion-gastos.component.html',
-  styleUrls: ['./gestion-gastos.component.css']
+  styleUrl: './gestion-gastos.component.css'
 })
 export class GestionGastosComponent implements OnInit {
   gastos: any[] = [];
