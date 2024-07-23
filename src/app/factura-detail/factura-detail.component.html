@@ -1,0 +1,19 @@
+<div *ngIf="isLoading" class="loading">
+  <p>Cargando detalles de la factura...</p>
+</div>
+
+<div *ngIf="!isLoading && factura" class="factura-detail">
+  <h2>Factura Detalle: {{ factura.numero }}</h2>
+  <p><strong>Fecha:</strong> {{ factura.fecha | date:'short }}</p>
+  <p><strong>Empresa:</strong> {{ factura.empresa }}</p>
+  <p><strong>Estado:</strong> {{ factura.estado }}</p>
+  <p><strong>Importe:</strong> {{ factura.importe}}</p>
+  <p *ngIf="factura.descripcion"><strong>Descripción:</strong> {{ factura.descripcion }}</p>
+
+  <button (click)="editarFactura(factura.id)">Editar Factura</button>
+  <button (click)="volver()">Volver</button>
+</div>
+
+<div *ngIf="!isLoading && !factura" class="no-factura">
+  <p>No se encontró la factura.</p>
+</div>
