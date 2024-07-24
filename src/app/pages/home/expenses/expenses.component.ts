@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ExpenseService } from '../../../services/expense.service';
 import { RouterModule } from '@angular/router';
-import { NavBarComponent } from "../../../components/nav-bar/nav-bar.component";
+import { NavBarComponent } from '../../../components/nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-expenses',
