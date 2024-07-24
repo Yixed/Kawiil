@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { WelcomeNavBarComponent } from "../../../components/welcome-nav-bar/welcome-nav-bar.component";
+import { FooterComponent } from "../../../components/footer/footer.component";
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, WelcomeNavBarComponent, FooterComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
