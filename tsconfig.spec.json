@@ -4,12 +4,9 @@
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
     "types": [
-      "jasmine",
-    "baseUrl": "./",
-    "paths": {
-      "@angular/*": ["node_modules/@angular/*"]
-    },
-  }
+      "jasmine"
+    ]
+  },
   "include": [
     "src/**/*.spec.ts",
     "src/**/*.d.ts"

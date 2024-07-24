@@ -12,5 +12,3 @@ import { LoginComponent } from './pages/login/login.component';
 export class AppComponent {
   title = 'k-awiil';
 }
-
-
