@@ -1,0 +1,60 @@
+<app-welcome-nav-bar></app-welcome-nav-bar>
+
+<div class="container">
+  <div class="col-sm-6 col-md-4 col-md-offset-4">
+    <img
+      class="logo"
+      src="/assets/images/kawiilLogo.png"
+      height="200"
+      alt=""
+    />
+    <h1 class="text-center login-title">Bienvenido a K'awiil</h1>
+    <div class="account-wall">
+      <form class="form-signin" [formGroup]="form" (ngSubmit)="submitForm()">
+        <input
+          type="text"
+          class="form-control m-2"
+          placeholder="Email"
+          required
+          autofocus
+          formControlName="email"
+        />
+        @if (form.get("email")?.touched && form.get("email")?.errors){ @if
+        (form.get("email")?.errors!["required"]){
+        <span class="validatorSpan">introduzca su email</span>
+        } @else {
+            <span class="validatorSpan">introduzca un correo electrónico</span>
+        }}
+
+        <input
+          type="password"
+          class="form-control m-2"
+          placeholder="Contraseña"
+          required
+          formControlName="pass"
+        />
+        @if (form.get("pass")?.touched && form.get("pass")?.errors){ @if
+        (form.get("pass")?.errors!["required"]){
+        <span class="validatorSpan">introduzca su contraseña</span>
+        } }
+
+        <label class="checkbox pull-left">
+          <input type="checkbox" value="remember-me" />
+          Recuérdame
+        </label>
+        <button
+          class="loginLink btn btn-lg btn-block"
+          style="background-color: #a2845e"
+          type="submit"
+          [disabled]="!form.valid"
+          (click)="submitForm()"
+        >
+          Login
+        </button>
+        <a href="#" class="registerLink text-center">Regístrate </a>
+      </form>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

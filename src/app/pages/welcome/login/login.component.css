@@ -1,0 +1,37 @@
+.container{
+    align-content: center;
+}
+
+.logo{
+    margin: 20px;
+    align-self: center;
+    border-radius: 28px;
+}
+.form-signin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.validatorSpan{
+    color: rgb(243, 75, 75);
+    font-style: italic;
+}
+
+.rememberCheck{
+    right: 10px;
+    display: inline;
+}
+.loginLink{
+    width: 80%;
+    color: white;
+    margin: 20px;
+
+}
+.registerLink{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: large;
+    margin-top: 10px;
+}
+
