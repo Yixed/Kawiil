@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FacturaService } from './factura.service';
+import { FacturaService } from './services/factura.service';
 
 describe('FacturaService', () => {
   let service: FacturaService;

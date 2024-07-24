@@ -1,45 +1,47 @@
-import { Factura } from './../interfaces/factura';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
-import { FacturaService } from '../factura.service';
+import { FacturaService } from '../services/factura.service';
+
+interface Factura {
+  id: number;
+  numero: string;
+  fecha: Date;
+  empresa: string;
+  estado: string;
+  importe: number;
+  descripcion?: string;
+}
 
 @Component({
   selector: 'app-factura-detail',
   templateUrl: './factura-detail.component.html',
-  styleUrls: ['./factura-detail.component.css']
+  styleUrls: ['./factura-detail.component.css'],
 })
 export class FacturaDetailComponent implements OnInit {
+  isLoading: boolean = true;
   factura: Factura | null = null;
-  isLoading = true;
 
-  constructor(
-    private route: ActivatedRoute,
-    private facturaService: FacturaService,
-    private router: Router,
-  ) {}
-
-  ngOnInit(): void {
-    const facturaId = this.route.snapshot.paramMap.get('id');
-    if (facturaId) {
-      this.cargarFactura(facturaId);
-    }
+  ngOnInit() {
+    this.cargarFactura();
   }
-
-  cargarFactura(id: string): void {
-    this.facturaService.getFacturas(id).subscribe({
-      next: (data) => {
-        this.factura = data;
-        this.isLoading = false;
-      },
-      error: (error) => {
-        console.error('Error al cargar la factura:', error);
-        this.isLoading = false;
-      }
+  constructor(private facturaService: FacturaService) {
+    this.facturaService.getFacturas().subscribe((factura: Factura) => {
+      this.factura = factura;
+      this.isLoading = false;
     });
   }
 
-  volver(): void {
-    this.router.navigate(['/facturas']);
+  cargarFactura() {
+    (error) => {
+      console.error('Error al cargar la factura:', error);
+      this.isLoading = false;
+    };
+  }
+
+  editarFactura(id: number) {
+    console.log('Editando factura:', id);
+  }
+
+  volver() {
+    console.log('Volviendo a la lista de facturas');
   }
 }

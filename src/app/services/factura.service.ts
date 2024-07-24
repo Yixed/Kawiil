@@ -11,10 +11,12 @@ export class FacturaService {
 
   constructor(private http: HttpClient) { }
 
-  getFacturas(filtros: any): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}?${filtros}`);
+  getFacturas(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}?`);
   }
-
+  cargarFactura(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}?`);
+  }
   crearFactura(factura: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, factura);
   }

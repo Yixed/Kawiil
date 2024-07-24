@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FacturaService } from '../factura.service';
+import { FacturaService } from '../services/factura.service';
 
 @Component({
   selector: 'app-factura-list',

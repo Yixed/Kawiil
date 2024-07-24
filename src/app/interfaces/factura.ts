@@ -1,6 +1,9 @@
 export interface Factura {
-  empresa: String;
+  id: number;
+  numero: string;
   fecha: Date;
-  importe: Number;
-  archivo: File;
+  empresa: string;
+  estado: string;
+  importe: number;
+  descripcion?: string; // Propiedad opcional
 }
