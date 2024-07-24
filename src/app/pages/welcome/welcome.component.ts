@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { LoginComponent } from './login/login.component';
 import { RouterOutlet } from '@angular/router';
-import { WelcomeNavBarComponent } from '../../components/welcome-nav-bar/welcome-nav-bar.component';
-import { FooterComponent } from "../../components/footer/footer.component";
+import { WelcomeNavBarComponent } from '../../components/commons/welcome-nav-bar/welcome-nav-bar.component';
+import { FooterComponent } from "../../components/commons/footer/footer.component";
 import { AboutUsComponent } from "./about-us/about-us.component";
 
 @Component({

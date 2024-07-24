@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ReportService } from '../../../services/report.service';
 import { RouterModule } from '@angular/router';
-import { NavBarComponent } from '../../../components/nav-bar/nav-bar.component';
+import { NavBarComponent } from '../../../components/commons/nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-reports',

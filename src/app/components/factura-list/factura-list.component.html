@@ -1,0 +1,8 @@
+<div>
+  <button (click)="aplicarFiltro()">Aplicar Filtro</button>
+  <ul>
+    <li *ngFor="let factura of facturas">
+      {{ factura.numero }} - {{ factura.fecha | date:'short }}
+    </li>
+  </ul>
+</div>
