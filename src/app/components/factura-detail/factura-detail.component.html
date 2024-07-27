@@ -1,9 +1,14 @@
+<h1></h1>
 <div *ngIf="isLoading" class="loading">
   <p>Cargando detalles de la factura...</p>
 </div>
 
 <div *ngIf="!isLoading && factura" class="factura-detail">
   <h2>Factura Detalle: {{ factura.numero }}</h2>
+  <div>
+    <input [(ngModel)]="filtro" placeholder="Filtrar facturas">
+    <button (click)="aplicarFiltro()">Aplicar Filtro</button>
+
   <p><strong>Fecha:</strong> {{ factura.fecha}}</p>
   <p><strong>Empresa:</strong> {{ factura.empresa }}</p>
   <p><strong>Estado:</strong> {{ factura.estado }}</p>
@@ -11,11 +16,29 @@
   @if (factura.descripcion) {
     <p><strong>Descripción:</strong> {{ factura.descripcion }}</p>
   }
-
-  <button (click)="editarFactura(factura.id)">Editar Factura</button>
-  <button (click)="volver()">Volver</button>
 </div>
 
+  <h2>Factura Detalle: factura</h2>
+    <input [(ngModel)]="filtro" placeholder="Filtrar facturas">
+    <button (click)="aplicarFiltro()">Aplicar Filtro</button>
+
+  <p><strong>Fecha:</strong> factura</p>
+  <p><strong>Empresa:</strong> {{ factura.empresa }}</p>
+  <p><strong>Estado:</strong> {{ factura.estado }}</p>
+  <p><strong>Importe:</strong> {{ factura.importe }}</p>
+  @if (factura.descripcion) {
+    <p><strong>Descripción:</strong> {{ factura.descripcion }}</p>
+  }
 <div *ngIf="!isLoading && !factura" class="no-factura">
   <p>No se encontró la factura.</p>
 </div>
+
+  <button (click)="editarFactura(factura.id)">Editar Factura</button>
+  <div>
+    <input type="file" (change)="subirFactura($event)" accept=".pdf,.jpg,.png">
+    <button (click)="subirFactura($event)">Subir Factura</button>
+  </div>
+  <button (click)="volver()">Volver</button>
+</div>
+
+

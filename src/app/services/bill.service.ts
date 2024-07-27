@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BillService {
- 
+
   private apiUrl = 'http://localhost:3000/facturas';
 
   constructor(private http: HttpClient) { }
@@ -19,5 +19,8 @@ export class BillService {
   }
   crearFactura(factura: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, factura);
+  }
+  subirFactura(formData: FormData): Observable<any> {
+    return this.http.post('this.apiUrl/upload', formData);
   }
 }
