@@ -2,17 +2,17 @@
   <p>Cargando detalles de la factura...</p>
 </div>
 
-<div *ngIf="!isLoading && factura" class="factura-detail">
-  <h2>Factura Detalle: {{ factura.numero }}</h2>
-  <p><strong>Fecha:</strong> {{ factura.fecha}}</p>
-  <p><strong>Empresa:</strong> {{ factura.empresa }}</p>
-  <p><strong>Estado:</strong> {{ factura.estado }}</p>
-  <p><strong>Importe:</strong> {{ factura.importe }}</p>
-  @if (factura.descripcion) {
-    <p><strong>Descripción:</strong> {{ factura.descripcion }}</p>
-  }
+<div  class="factura-detail">
+  <h2>Factura Detalle: 121</h2>
+  <p><strong>Fecha:</strong> 2024/10/10</p>
+  <p><strong>Empresa:</strong> empresa</p>
+  <p><strong>Estado:</strong> pagasa</p>
+  <p><strong>Importe:</strong> importe</p>
+  
+    <p><strong>Descripción:</strong> descripcion</p>
+  
 
-  <button (click)="editarFactura(factura.id)">Editar Factura</button>
+  <button (click)="editarFactura(1)">Editar Factura</button>
   <button (click)="volver()">Volver</button>
 </div>
 
