@@ -1,12 +1,9 @@
 .container{
-    align-content: center;
+        padding-bottom: 10em;
+        min-height: 100vh;
 }
 
-.logo{
-    margin: 20px;
-    align-self: center;
-    border-radius: 28px;
-}
+
 .form-signin{
     display: flex;
     flex-direction: column;
@@ -22,10 +19,10 @@
     display: inline;
 }
 .loginLink{
-    width: 80%;
+    width: 100px;
     color: white;
     margin: 20px;
-
+    background-color: #a2845e;
 }
 .registerLink{
     text-decoration: none;

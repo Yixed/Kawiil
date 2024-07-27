@@ -9,7 +9,7 @@ import { ProfileComponent } from './pages/home/profile/profile.component';
 
 export const routes: Routes = [
     {
-        path: "welcome",
+        path: "",
         component: WelcomeComponent
     },
     {
