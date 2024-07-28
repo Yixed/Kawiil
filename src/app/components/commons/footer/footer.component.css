@@ -1,8 +1,11 @@
-@media (max-width: 1250px) {
-  .gitProfiles {
-    text-align: left;
-    position: absolute;
-  right: 50%;
-  transform: translate(50%,-50%);
-  }
+.footerContainer{
+    height: 160px;
+}
+
+.devLink{
+    text-decoration: none;
+    color: black;
+}
+.devLink:hover{
+    color: white;
 }
