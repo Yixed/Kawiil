@@ -31,14 +31,28 @@
             </div>
 
             <div class="form-group">
-              <label class="small mb-1" for="inputPassword">Contraseña:</label
-              ><input
-                class="form-control py-2"
-                id="inputPassword"
-                type="password"
-                placeholder="Contraseña*"
-                formControlName="pass"
-              />
+              <label class="small mb-1" for="inputPassword">Contraseña:</label>
+              <div class="input-group">
+                <input
+                  class="form-control py-2"
+                  id="inputPassword"
+                  [type]="passwordType"
+                  placeholder="Contraseña*"
+                  formControlName="password"
+                />
+                <button
+                  id="eyeButton"
+                  (click)="changePasswordSight(passwordType)"
+                  class="btn btn-outline-secondary"
+                  type="button"
+                >
+                  @if(passwordType === 'text'){
+                  <i class="fa fa-eye-slash"></i>
+                  } @else {
+                  <i class="fa fa-eye"></i>
+                  }
+                </button>
+              </div>
             </div>
             @if (form.get("pass")?.touched && form.get("pass")?.errors){ @if
             (form.get("pass")?.errors!["required"]){
@@ -62,10 +76,9 @@
             <div
               class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"
             >
-              <a class="small" routerLink="/auth/forgot-password"
-                >¿Has olvidado tu contraseña?</a
-              ><button
+              <button
                 class="loginLink btn"
+                id="loginButton"
                 type="submit"
                 [disabled]="!form.valid"
                 (click)="submitForm()"
@@ -81,7 +94,6 @@
             <a class="small" routerLink="/signup">o regístrate</a>
           </div>
         </div>
-
       </div>
     </div>
   </div>
