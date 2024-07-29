@@ -8,7 +8,7 @@
       <div class="p-3">
         <label for="" class="form-label">Compañia</label>
         <input
-          formControlName="name"
+          formControlName="company"
           type="text"
           class="form-control"
           placeholder="Nombre"
@@ -17,8 +17,8 @@
       <div class="p-3">
         <label for="" class="form-label">Fecha</label>
         <input
-          formControlName="price"
-          type="number"
+          formControlName="creationDate"
+          type="text"
           class="form-control"
           placeholder="Precio"
         />
@@ -26,7 +26,7 @@
       <div class="p-3">
         <label for="" class="form-label">Nombre</label>
         <input
-          formControlName="description"
+          formControlName="name"
           type="text"
           class="form-control"
           placeholder="Descripcion"
@@ -35,7 +35,7 @@
       <div class="p-3">
         <label for="" class="form-label">Descripcion</label>
         <input
-          formControlName="image"
+          formControlName="description"
           type="text"
           class="form-control"
           placeholder="Imagen"
@@ -46,7 +46,7 @@
         <input
           min="0"
           max="5"
-          formControlName="review"
+          formControlName="amount"
           type="number"
           class="form-control"
           placeholder="Opiniones"
@@ -56,9 +56,9 @@
         }
       </div>
 
-      <button [disabled]="form.valid === false" class="btn btn-warning">
+      <a class="btn btn-warning" routerLink="/addInvoice" (click)="addinvoicebtn()">
         Guardar
-      </button>
+      </a>
     </form>
   </div>
 

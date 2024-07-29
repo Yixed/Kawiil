@@ -33,7 +33,7 @@ export class AddInvoiceComponent {
       name: new FormControl(null, []),
       description: new FormControl(null, []),
       amount: new FormControl(null, []),
-      file: new FormControl(null, []),
+      file: new FormControl("", []),
      }) 
   }
 
