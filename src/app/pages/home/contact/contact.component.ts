@@ -1,20 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { ReportService } from '../../../services/report.service';
+import { ContactService } from '../../../services/contact.service';
 import { RouterModule } from '@angular/router';
 import { NavBarComponent } from '../../../components/commons/nav-bar/nav-bar.component';
 
 @Component({
-  selector: 'app-reports',
+  selector: 'app- Contact',
   standalone: true,
   imports: [RouterModule, NavBarComponent],
-  templateUrl: './reports.component.html',
-  styleUrl: './reports.component.css'
+  templateUrl: './contact.component.css',
+  styleUrl: './contact.component.css'
 })
-export class ReportsComponent implements OnInit {
+
+export class  ContactComponent
+/*implements OnInit {
   ventas: any;
 
-  constructor(private reportService: ReportService) {}
-
+  constructor(private contactService:  ContactService) {}
+/*
   ngOnInit() {
     this.obtenerInformeVentas();
   }

@@ -23,10 +23,10 @@
 
 
               <button class="btn btn-primary" type="submit" control-id="ControlID-4">Buscar</button>
-            
-            
+
+
             </form>
-            
+
             <button class="btn btn-primary" type="submit" control-id="ControlID-4">Añadir facturas</button>
 
           </div>
@@ -54,7 +54,7 @@
                 aria-label="Patients Name: activate to sort column ascending"
                 aria-sort="descending"
               >
-                Comapñia
+                Empresa
               </th>
               <th
                 scope="col"
@@ -78,7 +78,7 @@
                 style="width: 105px"
                 aria-label="Appointment Date: activate to sort column ascending"
               >
-                nombre
+                Nombre
               </th>
               <th
                 scope="col"
@@ -90,7 +90,7 @@
                 style="width: 91px"
                 aria-label="Serial Number: activate to sort column ascending"
               >
-                descripcion
+                Descripción
               </th>
               <th
                 scope="col"
@@ -102,12 +102,12 @@
                 style="width: 101px"
                 aria-label="Amount: activate to sort column ascending"
               >
-                Costo
+                Importe
               </th>
             </tr>
           </thead>
           <tbody>
-            
+
            @for (item of invoicesList; track $index) {
             <tr role="row" class="even">
               <th scope="row" tabindex="0" class="sorting_1">
@@ -131,7 +131,7 @@
                     <a class="nav-link" routerLink="/profile">Perfil</a>
                     </div>
                   </div>
-                
+
               </td>
             </tr>
         }
