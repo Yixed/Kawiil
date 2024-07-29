@@ -1,9 +1,9 @@
 export interface Invoice {
-  _id: string;
-  company: string;
-  creationDate: string;
-  name: string;
-  description: string;
-  amount: number;
-  file: string;
+  _id: String;
+  company: String;
+  creationDate: String;
+  name: String;
+  description: String;
+  amount: Number;
+  file: String;
 }

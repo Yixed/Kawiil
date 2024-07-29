@@ -24,16 +24,16 @@ export class ExpensesComponent {
   ];
   bills: Invoice[] = [];
 
-  constructor(private invoiceService: InvoiceService) {
-    invoiceService.addInvoice().subscribe({
-      next: (res) => {
-        this.bills = res as Invoice[];
-        console.log('finalizado con exito', this.bills);
-      },
-      error: () => {
-        console.log('error');
-      },
-    });
-  }
+  // constructor(private invoiceService: InvoiceService) {
+  //   invoiceService.addInvoice().subscribe({
+  //     next: (res) => {
+  //       this.bills = res as Invoice[];
+  //       console.log('finalizado con exito', this.bills);
+  //     },
+  //     error: () => {
+  //       console.log('error');
+  //     },
+  //   });
+  // }
 
 }

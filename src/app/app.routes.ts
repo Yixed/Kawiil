@@ -7,6 +7,7 @@ import { ExpensesComponent } from './pages/home/expenses/expenses.component';
 import { ReportsComponent } from './pages/home/reports/reports.component';
 import { ProfileComponent } from './pages/home/profile/profile.component';
 import { InvoiceDetailsComponent } from './pages/home/invoice-details/invoice-details.component';
+import { AddInvoiceComponent } from './pages/home/add-invoice/add-invoice.component';
 
 export const routes: Routes = [
     {
@@ -40,5 +41,9 @@ export const routes: Routes = [
     {
         path: "editInvoice",
         component: InvoiceDetailsComponent
+    },
+    {
+        path: "addInvoice",
+        component: AddInvoiceComponent
     },
 ];
