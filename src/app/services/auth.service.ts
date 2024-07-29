@@ -10,6 +10,7 @@ import { CookieService } from 'ngx-cookie-service';
 export class AuthService {
   url: string = 'https://backkawiilbd-1.onrender.com/user';
   user: User|null = null;
+  loginResponse: LoginResponse|null = null;
 
 
   constructor(private http: HttpClient, private cookieService: CookieService) {
