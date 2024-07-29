@@ -1,0 +1,77 @@
+<app-nav-bar></app-nav-bar>
+
+<h2>Creación/Edición de Facturas</h2>
+
+<div class="row">
+  <div class="col-md-6 col-lg-6 col-sm-6">
+    <form [formGroup]="form">
+      <div class="p-3">
+        <label for="" class="form-label">Nombre del producto</label>
+        <input
+          formControlName="name"
+          type="text"
+          class="form-control"
+          placeholder="Nombre"
+        />
+      </div>
+      <div class="p-3">
+        <label for="" class="form-label">Precio</label>
+        <input
+          formControlName="price"
+          type="number"
+          class="form-control"
+          placeholder="Precio"
+        />
+      </div>
+      <div class="p-3">
+        <label for="" class="form-label">Descripción</label>
+        <input
+          formControlName="description"
+          type="text"
+          class="form-control"
+          placeholder="Descripción"
+        />
+      </div>
+      <div class="p-3">
+        <label for="" class="form-label">Ruta Imagen</label>
+        <input
+          formControlName="image"
+          type="text"
+          class="form-control"
+          placeholder="Imagen"
+        />
+      </div>
+      <div class="p-3">
+        <label for="" class="form-label">Opiniones</label>
+        <input
+          min="0"
+          max="5"
+          formControlName="review"
+          type="number"
+          class="form-control"
+          placeholder="Opiniones"
+        />
+        <span *ngIf="form.get('review')?.errors" [style.color]="'red'">
+          Error en las reviews
+        </span>
+      </div>
+
+      <!-- Botón para editar la factura -->
+      <button [disabled]="form.invalid" class="btn btn-warning" (click)="editarFactura()">
+        Editar Factura
+      </button>
+
+      <!-- Botón para descargar la factura como PDF -->
+      <button class="btn btn-success mt-3" (click)="descargarFactura()">
+        Descargar Factura
+      </button>
+    </form>
+  </div>
+
+  <div class="col-md-1 col-lg-1 d-none d-md-block">
+    <div class="separador"></div>
+  </div>
+  <div class="d-block d-sm-none">
+    <hr />
+  </div>
+</div>

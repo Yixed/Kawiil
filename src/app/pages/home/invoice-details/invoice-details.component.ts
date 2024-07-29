@@ -1,28 +1,3 @@
-<<<<<<< Updated upstream:src/app/factura-detail/factura-detail.component.ts
-import { Component, OnInit } from '@angular/core';
-import { FacturaService } from '../services/factura.service';
-
-interface Factura {
-  id: number;
-  numero: string;
-  fecha: Date;
-  empresa: string;
-  estado: string;
-  importe: number;
-  descripcion?: string;
-}
-
-@Component({
-  selector: 'app-factura-detail',
-  templateUrl: './factura-detail.component.html',
-  styleUrls: ['./factura-detail.component.css'],
-})
-export class FacturaDetailComponent implements OnInit {
-  isLoading: boolean = true;
-  factura: Factura | null = null;
-=======
-// invoice-details.component.ts
-
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
@@ -40,7 +15,6 @@ export class InvoiceDetailsComponent {
   parametro: string | null = null;
   invoice: Invoice | null = null;
   form!: FormGroup;
->>>>>>> Stashed changes:src/app/components/factura-detail/factura-detail.component.ts
 
   constructor(
     private route: ActivatedRoute,
@@ -75,19 +49,6 @@ export class InvoiceDetailsComponent {
       });
     }
   }
-<<<<<<< Updated upstream:src/app/factura-detail/factura-detail.component.ts
-  constructor(private facturaService: FacturaService) {
-    this.facturaService.getFacturas().subscribe((factura: Factura) => {
-      this.factura = factura;
-      this.isLoading = false;
-    });
-  }
-
-  cargarFactura() {
-    (error) => {
-      console.error('Error al cargar la factura:', error);
-      this.isLoading = false;
-=======
 
   // Crear un formulario reactivo
   createForm() {
@@ -116,7 +77,6 @@ export class InvoiceDetailsComponent {
       description,
       file: image,
       review
->>>>>>> Stashed changes:src/app/components/factura-detail/factura-detail.component.ts
     };
 
     // Aquí se podría llamar a un servicio para actualizar la factura en la base de datos
