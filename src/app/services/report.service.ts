@@ -5,5 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class ReportService {
 
-  constructor() { }
+  constructor() {
+
+    
+   }
 }

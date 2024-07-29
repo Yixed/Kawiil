@@ -1,0 +1,11 @@
+.footerContainer{
+    height: 160px;
+}
+
+.devLink{
+    text-decoration: none;
+    color: black;
+}
+.devLink:hover{
+    color: white;
+}

@@ -1,0 +1,79 @@
+.loginLink{
+    width: 200px;
+    height: 40px;
+    color: white;
+    margin: 20px;
+    background-color: #a2845e;
+    border-radius: 15px;
+}
+
+.aboutUsContainer{
+-webkit-text-size-adjust: 100%;
+height: 80vh;
+font-family: Arial, sans-serif;
+font-size: 14px;
+line-height: 20px;
+color: #333;
+text-align: center;
+box-sizing: border-box;
+background-image: linear-gradient( #ffffff 20%, #bbb2a6  );
+padding: 50px 2% 220px;
+padding-left: 4%;
+padding-right: 4%;
+}
+
+.combine-container-small{
+
+font-family: Arial, sans-serif;
+font-size: 14px;
+line-height: 20px;
+color: #333;
+text-align: center;
+box-sizing: border-box;
+width: 100%;
+max-width: 48rem;
+margin-left: auto;
+margin-right: auto;
+}
+
+
+.combine-text-align-center{
+
+font-family: Arial, sans-serif;
+font-size: 14px;
+line-height: 20px;
+color: #333;
+box-sizing: border-box;
+text-align: center;
+}
+
+.mobile-display{
+font-family: Arial, sans-serif;
+font-size: 14px;
+line-height: 20px;
+color: #333;
+text-align: center;
+box-sizing: border-box;
+justify-content: center;
+flex-direction: row;
+align-items: center;
+display: block;
+}
+
+.combine-button-wrapper{
+font-family: Arial, sans-serif;
+font-size: 14px;
+line-height: 20px;
+box-sizing: border-box;
+display: flex;
+grid-column-gap: 0px;
+flex-flow: row;
+justify-content: center;
+grid-row-gap: 1rem;
+text-align: center;
+flex-direction: column;
+align-items: center;
+width: 100%;
+margin-left: auto;
+margin-right: auto;
+}

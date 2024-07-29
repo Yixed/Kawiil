@@ -11,5 +11,6 @@ import { NavBarComponent } from '../../components/commons/nav-bar/nav-bar.compon
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+ footerBg: string = "#f8f9fa";
 
 }
