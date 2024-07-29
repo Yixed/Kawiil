@@ -9,14 +9,15 @@
         </div>
 
         <div class="card-body">
-          <form>
+          <form [formGroup]="form" (ngSubmit)="signup()">
             <div class="form-row">
               <div class="col-md-12">
                 <div class="form-group">
                   <label class="small mb-1" for="inputFirstName"
-                    >Introduce aquí tu nombre</label
+                    >Name</label
                   ><input
                     class="form-control py-2"
+                    formControlName="name"
                     id="inputFirstName"
                     type="text"
                     placeholder="Escribe aquí tu nombre"
@@ -26,9 +27,10 @@
 
               <div class="col-md-12">
                 <div class="form-group">
-                  <label class="small mb-1" for="inputLastName">Introduce tu apellido</label
+                  <label class="small mb-1" for="surname">Introduce tu apellido</label
                   ><input
                     class="form-control py-2"
+                    formControlName="surname"
                     id="inputLastName"
                     type="text"
                     placeholder="Escribe aquí tu apellido"
@@ -42,22 +44,25 @@
                 <label class="small mb-1" for="inputEmailAddress">Correo electronico</label
                 ><input
                   class="form-control py-2"
+                  formControlName="email"
                   id="inputEmailAddress"
                   type="email"
                   aria-describedby="emailHelp"
                   placeholder="Escribe aquí tu email"
                 />
-              </div>
+              </div>            
             </div>
 
+            
             <div class="form-row">
               <div class="col-md-12">
                 <div class="form-group">
                   <label class="small mb-1" for="inputPassword">Introduce aquí tu contraseña</label
                   ><input
                     class="form-control py-2"
+                    formControlName="pwd"
                     id="inputPassword"
-                    type="password"
+                    type="pwd"
                     placeholder="Contraseña"
                   />
                 </div>
@@ -78,9 +83,8 @@
             </div>
 
             <div class="form-group mt-4 mb-0">
-              <a class="btn btn-primary btn-block" routerLink="/dashboard"
-                >Crear cuenta</a
-              >
+              <button class="btn btn-primary btn-block" (click)="signup()"
+                >Crear cuenta</button>
             </div>
           </form>
         </div>
