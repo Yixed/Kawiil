@@ -6,6 +6,7 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { ExpensesComponent } from './pages/home/expenses/expenses.component';
 import { ReportsComponent } from './pages/home/reports/reports.component';
 import { ProfileComponent } from './pages/home/profile/profile.component';
+import { InvoiceDetailsComponent } from './pages/home/invoice-details/invoice-details.component';
 
 export const routes: Routes = [
     {
@@ -35,5 +36,9 @@ export const routes: Routes = [
     {
         path: "profile",
         component: ProfileComponent
+    },
+    {
+        path: "editInvoice",
+        component: InvoiceDetailsComponent
     },
 ];

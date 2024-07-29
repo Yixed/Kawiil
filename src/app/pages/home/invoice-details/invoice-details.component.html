@@ -1,0 +1,72 @@
+<app-nav-bar></app-nav-bar>
+
+<h2>Creacion/edición de facturas</h2>
+
+<div class="row">
+  <div class="col-md-6 col-lg-6 col-sm-6">
+    <form [formGroup]="form">
+      <div class="p-3">
+        <label for="" class="form-label">Nombre del producto</label>
+        <input
+          formControlName="name"
+          type="text"
+          class="form-control"
+          placeholder="Nombre"
+        />
+      </div>
+      <div class="p-3">
+        <label for="" class="form-label">Precio</label>
+        <input
+          formControlName="price"
+          type="number"
+          class="form-control"
+          placeholder="Precio"
+        />
+      </div>
+      <div class="p-3">
+        <label for="" class="form-label">Descripcion</label>
+        <input
+          formControlName="description"
+          type="text"
+          class="form-control"
+          placeholder="Descripcion"
+        />
+      </div>
+      <div class="p-3">
+        <label for="" class="form-label">Ruta imagen</label>
+        <input
+          formControlName="image"
+          type="text"
+          class="form-control"
+          placeholder="Imagen"
+        />
+      </div>
+      <div class="p-3">
+        <label for="" class="form-label">Opiniones</label>
+        <input
+          min="0"
+          max="5"
+          formControlName="review"
+          type="number"
+          class="form-control"
+          placeholder="Opiniones"
+        />
+        @if(form.get("review")?.errors){
+        <span [style]="{ color: 'red' }">error en las reviews</span>
+        }
+      </div>
+
+      <button [disabled]="form.valid === false" class="btn btn-warning">
+        Guardar
+      </button>
+    </form>
+  </div>
+
+  <div class="col-md-1 col-lg-1 d-none d-md-block">
+    <div class="separador"></div>
+  </div>
+  <div class="d-block d-sm-none">
+    <hr />
+  </div>
+</div>
+

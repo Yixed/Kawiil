@@ -1,5 +1,144 @@
 <app-nav-bar></app-nav-bar>
 
-<app-factura-detail></app-factura-detail>
-<app-factura-list></app-factura-list>
-<app-upload></app-upload>
+
+
+<div class="containerBills">
+
+  <div class="ContainerB">
+    <div class="white_box_tittle list_header m-0 align-items-center">
+      <div class="main-title mb-sm-15">
+        <h3 class="m-0 nowrap">Tus facturas </h3>
+      </div>
+      <div class="">
+        <div class="serach_field-area2">
+          <div class="search">
+            <form active="#" class="inputContainer">
+              <div class="search_field">
+                <input
+                  type="text"
+                  placeholder="Search here..."
+                  control-id="ControlID-3"
+                />
+              </div>
+
+
+              <button class="btn btn-primary" type="submit" control-id="ControlID-4">Buscar</button>
+            
+            
+            </form>
+            
+            <button class="btn btn-primary" type="submit" control-id="ControlID-4">Añadir facturas</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="QA_table">
+      <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer">
+        <table
+          class="table lms_table_active2 dataTable no-footer dtr-inline"
+          id="DataTables_Table_0"
+          role="grid"
+          style="width: 854px"
+        >
+          <thead>
+            <tr role="row">
+              <th
+                scope="col"
+                class="sorting_desc"
+                tabindex="0"
+                aria-controls="DataTables_Table_0"
+                rowspan="1"
+                colspan="1"
+                style="width: 157px"
+                aria-label="Patients Name: activate to sort column ascending"
+                aria-sort="descending"
+              >
+                Comapñia
+              </th>
+              <th
+                scope="col"
+                class="sorting"
+                tabindex="0"
+                aria-controls="DataTables_Table_0"
+                rowspan="1"
+                colspan="1"
+                style="width: 100px"
+                aria-label="department: activate to sort column ascending"
+              >
+                Fecha
+              </th>
+              <th
+                scope="col"
+                class="sorting"
+                tabindex="0"
+                aria-controls="DataTables_Table_0"
+                rowspan="1"
+                colspan="1"
+                style="width: 105px"
+                aria-label="Appointment Date: activate to sort column ascending"
+              >
+                nombre
+              </th>
+              <th
+                scope="col"
+                class="sorting"
+                tabindex="0"
+                aria-controls="DataTables_Table_0"
+                rowspan="1"
+                colspan="1"
+                style="width: 91px"
+                aria-label="Serial Number: activate to sort column ascending"
+              >
+                descripcion
+              </th>
+              <th
+                scope="col"
+                class="sorting"
+                tabindex="0"
+                aria-controls="DataTables_Table_0"
+                rowspan="1"
+                colspan="1"
+                style="width: 101px"
+                aria-label="Amount: activate to sort column ascending"
+              >
+                Costo
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            
+           @for (item of invoicesList; track $index) {
+            <tr role="row" class="even">
+              <th scope="row" tabindex="0" class="sorting_1">
+                <div class="patient_thumb d-flex align-items-center">
+                  <div class="student_list_img mr_20">
+                    <img src="img/patient/6.png" alt="" srcset="" />
+                  </div>
+                  <p>{{item.company}}</p>
+                </div>
+              </th>
+              <td>Monte Carlo</td>
+              <td>11/03/2020</td>
+              <td >MDC65454</td>
+              <td >
+                <div class="containerAmount">
+                  $29,192
+                <div class="containerButton">
+                    <button class="btn btn-secondary" href="#">View</button>
+                    <a class="btn btn-secondary" routerLink="/editInvoice">Edit</a>
+                    <button class="btn btn-warning" href="#">Delete</button>
+                    <a class="nav-link" routerLink="/profile">Perfil</a>
+                    </div>
+                  </div>
+                
+              </td>
+            </tr>
+        }
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
