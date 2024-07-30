@@ -10,7 +10,6 @@ import { WelcomeNavBarComponent } from '../../../components/commons/welcome-nav-
 import { FooterComponent } from '../../../components/commons/footer/footer.component';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
-import { User } from '../../../interfaces/user';
 import { LoginResponse } from '../../../interfaces/login-response';
 
 @Component({
@@ -50,8 +49,6 @@ export class LoginComponent {
       .login(this.form.value.email, this.form.value.password)
       .subscribe({
         next: (response) => {
-          console.log(response)
-
           this.authService.saveUser(response as LoginResponse);
           this.router.navigate(['/home']);
         },
@@ -61,7 +58,4 @@ export class LoginComponent {
       });
   }
 
-  getUser(){
-
-  }
 }
