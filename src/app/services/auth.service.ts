@@ -10,11 +10,10 @@ import { LoginResponse } from '../interfaces/login-response';
 })
 export class AuthService {
   url: string = 'https://backkawiilbd-1.onrender.com/user';
-  loginResponse: LoginResponse|null = null;
-
+  loginResponse: LoginResponse | null = null;
 
   constructor(private http: HttpClient, private cookieService: CookieService) {
-    if(cookieService.check("user")){
+    if (cookieService.check('user')) {
       //coger datos del userCookie
     }
   }
@@ -25,35 +24,29 @@ export class AuthService {
       email: email_,
       password: password_,
     });
-  } 
+  }
 
-  signup(name: string, surname: string, email: string,  pwd: string){
-    return this.http.post(
-      `${this.url}/addUser`,
-      {
-        name: name,
-        surname: surname,
-        email: email,
-        password: pwd
-      }
-    
-  )
-
+  signup(name: string, surname: string, email: string, pwd: string) {
+    return this.http.post(`${this.url}/addUser`, {
+      name: name,
+      surname: surname,
+      email: email,
+      password: pwd,
+    });
   }
 
   //Guardar datos del usuario
-  saveUser(loginResponse: LoginResponse){
+  saveUser(loginResponse: LoginResponse) {
     //Al usar cookies tenemos que guardar los datos en dos sitios en paralelo, variables+cookies
     //se guarda en local
     this.loginResponse = loginResponse;
     //y se guarda en cookies
-    this.cookieService.set("loginResponse", JSON.stringify(loginResponse));
+    this.cookieService.set('loginResponse', JSON.stringify(loginResponse));
   }
 
   //logout, borra los datos actuales de usuario
-  logout(){
-    this.cookieService.delete("user");
-    this.loginResponse=null
+  logout() {
+    this.cookieService.delete('loginResponse');
+    this.loginResponse = null;
   }
-
 }

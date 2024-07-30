@@ -9,8 +9,8 @@ export const welcomeRedirectGuard: CanActivateFn = (route, state) => {
   if(cookieService.check("loginResponse")){
     console.log("session en curso");
     router.navigate(['/home']);
-    return true;
+    return false;
   }
   console.log("sin iniciar sesion");
-  return false
+  return true
 };
