@@ -13,10 +13,9 @@ export class AuthService {
   loginResponse: LoginResponse | null = null;
 
   constructor(private http: HttpClient, private cookieService: CookieService) {
-    if (cookieService.check('user')) {
-      //coger datos del userCookie
-    }
+    
   }
+  
 
   //Post para login, devuelve token if true
   login(email_: string, password_: string) {
@@ -43,6 +42,8 @@ export class AuthService {
     //y se guarda en cookies
     this.cookieService.set('loginResponse', JSON.stringify(loginResponse));
   }
+
+  
 
   //logout, borra los datos actuales de usuario
   logout() {

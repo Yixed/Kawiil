@@ -6,11 +6,11 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { WelcomeNavBarComponent } from '../../../components/commons/welcome-nav-bar/welcome-nav-bar.component';
 import { FooterComponent } from '../../../components/commons/footer/footer.component';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 import { LoginResponse } from '../../../interfaces/login-response';
+import { NavBarComponent } from '../../../components/commons/nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +18,7 @@ import { LoginResponse } from '../../../interfaces/login-response';
   imports: [
     RouterModule,
     ReactiveFormsModule,
-    WelcomeNavBarComponent,
+    NavBarComponent,
     FooterComponent,
   ],
   templateUrl: './login.component.html',

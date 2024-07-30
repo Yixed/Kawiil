@@ -1,15 +1,15 @@
 import { AuthService } from './../../../services/auth.service';
 import { Component } from '@angular/core';
-import { Route, Router, RouterModule } from '@angular/router';
-import { WelcomeNavBarComponent } from "../../../components/commons/welcome-nav-bar/welcome-nav-bar.component";
+import { Router, RouterModule } from '@angular/router';
 import { FooterComponent } from "../../../components/commons/footer/footer.component";
 import { FormGroup, FormBuilder, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { NavBarComponent } from '../../../components/commons/nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [RouterModule, WelcomeNavBarComponent, FooterComponent, ReactiveFormsModule, CommonModule],
+  imports: [RouterModule, NavBarComponent, FooterComponent, ReactiveFormsModule, CommonModule],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css'
 })
