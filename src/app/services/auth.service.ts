@@ -14,7 +14,9 @@ export class AuthService {
   loginResponse: LoginResponse | null = null;
 
   constructor(private http: HttpClient, private cookieService: CookieService) {
+    if(cookieService.check("loginResponse")){
     this.loginResponse = JSON.parse(this.cookieService.get('loginResponse'));
+    }
   }
 
   //Post para login, devuelve token if true
@@ -63,7 +65,6 @@ export class AuthService {
     const body = {
       "id": idInvoice
     }
-
     return this.http.put(`${this.url}/asignInvoice/${idUser}`, body)
   }
 }
