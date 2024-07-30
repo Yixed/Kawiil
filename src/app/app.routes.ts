@@ -4,13 +4,13 @@ import { LoginComponent } from './pages/welcome/login/login.component';
 import { SignupComponent } from './pages/welcome/signup/signup.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { ExpensesComponent } from './pages/home/expenses/expenses.component';
-import { ReportsComponent } from './pages/home/reports/reports.component';
 import { ProfileComponent } from './pages/home/profile/profile.component';
 import { InvoiceDetailsComponent } from './pages/home/invoice-details/invoice-details.component';
 import { isAuthGuardGuard } from './guards/is-auth-guard.guard';
 import { isNotAuthGuardGuard } from './guards/is-not-auth-guard.guard';
 import { welcomeRedirectGuard } from './guards/welcome-redirect.guard';
 import { AddInvoiceComponent } from './pages/home/add-invoice/add-invoice.component';
+import { ContactComponent } from './pages/home/contact/contact.component';
 
 export const routes: Routes = [
     {
@@ -39,8 +39,8 @@ export const routes: Routes = [
         canActivate: [isAuthGuardGuard]
     },
     {
-        path: "reports",
-        component: ReportsComponent,
+        path: "contact",
+        component: ContactComponent,
         canActivate: [isAuthGuardGuard]
     },
     {

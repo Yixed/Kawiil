@@ -1,0 +1,13 @@
+
+   .img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-49%, -49%);
+    height: 80vh;
+    border-radius: 30px;
+    z-index: -1;
+    
+
+
+   }
