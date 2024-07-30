@@ -1,4 +1,4 @@
-<app-welcome-nav-bar></app-welcome-nav-bar>
+<app-nav-bar></app-nav-bar>
 
 <div class="container">
   <div class="row justify-content-center">
@@ -67,6 +67,20 @@
                   />
                 </div>
               </div>
+              
+              @if (form.get("pwd")?.touched && form.get("pwd")?.errors){ 
+                @if
+                (form.get("pwd")?.errors!["required"]){
+                <span class="validatorSpan">introduzca su contraseña</span>
+                }
+                @else {
+                <span class="validatorSpan"
+                  >La contraseña debe incluir: letra mayuscula, letra minuscula, y no se permiten los caracteres: $ &#64; $ ! % * ? &</span
+                ><tr></tr>
+                <span class="validatorSpan"
+                  >mínimo 8 caracteres, máximo 15.</span
+                >
+                }}
 
               <div class="col-md-12">
                 <div class="form-group">

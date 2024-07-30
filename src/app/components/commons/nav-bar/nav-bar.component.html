@@ -25,6 +25,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        @if(!logged) {
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/"
             >Inicio</a
@@ -36,12 +37,10 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/signup">Regístrate</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/home">SIMULAR LOGIN</a>
-        </li>
+      } @else if(logged) {
 
         <li class="nav-item">
-          <a class="nav-link active" routerLink="/home">Inicio</a>
+          <a class="nav-link active" routerLink="/home">menú</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" routerLink="/reports">informes</a>
@@ -56,6 +55,7 @@
         <li class="nav-item">
           <button class="nav-link" (click)="logout()">logout</button>
         </li>
+      }
       </ul>
     </div>
   </div>

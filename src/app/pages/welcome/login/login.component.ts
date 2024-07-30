@@ -6,11 +6,11 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { WelcomeNavBarComponent } from '../../../components/commons/welcome-nav-bar/welcome-nav-bar.component';
 import { FooterComponent } from '../../../components/commons/footer/footer.component';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
-import { User } from '../../../interfaces/user';
+import { LoginResponse } from '../../../interfaces/login-response';
+import { NavBarComponent } from '../../../components/commons/nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +18,7 @@ import { User } from '../../../interfaces/user';
   imports: [
     RouterModule,
     ReactiveFormsModule,
-    WelcomeNavBarComponent,
+    NavBarComponent,
     FooterComponent,
   ],
   templateUrl: './login.component.html',
@@ -27,7 +27,7 @@ import { User } from '../../../interfaces/user';
 export class LoginComponent {
   passwordType: string = 'password';
   form!: FormGroup;
-
+  
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
@@ -43,13 +43,13 @@ export class LoginComponent {
     this.passwordType = pass_ === 'text' ? 'password' : 'text';
   }
 
-  submitForm() {
-    console.log('clicado, valores del formulario: ', this.form.value);
+  submitLogin() {
+    //Se hace la petición de login configurada en authService
     this.authService
       .login(this.form.value.email, this.form.value.password)
       .subscribe({
         next: (response) => {
-          this.authService.saveUser(response as User);
+          this.authService.saveUser(response as LoginResponse);
           this.router.navigate(['/home']);
         },
         error: () => {
@@ -57,4 +57,5 @@ export class LoginComponent {
         },
       });
   }
+
 }

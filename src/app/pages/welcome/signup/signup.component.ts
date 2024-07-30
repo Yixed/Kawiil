@@ -1,14 +1,15 @@
 import { AuthService } from './../../../services/auth.service';
 import { Component } from '@angular/core';
-import { Route, Router, RouterModule } from '@angular/router';
-import { WelcomeNavBarComponent } from "../../../components/commons/welcome-nav-bar/welcome-nav-bar.component";
+import { Router, RouterModule } from '@angular/router';
 import { FooterComponent } from "../../../components/commons/footer/footer.component";
 import { FormGroup, FormBuilder, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { NavBarComponent } from '../../../components/commons/nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [RouterModule, WelcomeNavBarComponent, FooterComponent, ReactiveFormsModule],
+  imports: [RouterModule, NavBarComponent, FooterComponent, ReactiveFormsModule, CommonModule],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css'
 })
@@ -22,7 +23,7 @@ export class SignupComponent {
     name: new FormControl(null, [Validators.required]),
     surname: new FormControl(null, [Validators.required]), 
     email: new FormControl(null, [Validators.required, Validators.email]),
-    pwd: new FormControl(null, [Validators.required,Validators.minLength(9)]),
+    pwd: new FormControl(null, [Validators.required,Validators.minLength(8), Validators.maxLength(15), Validators.pattern(/[A-Za-z\d$@$!%*?&]/), ]),
    }) 
   }
 

@@ -7,38 +7,49 @@ import { ExpensesComponent } from './pages/home/expenses/expenses.component';
 import { ReportsComponent } from './pages/home/reports/reports.component';
 import { ProfileComponent } from './pages/home/profile/profile.component';
 import { InvoiceDetailsComponent } from './pages/home/invoice-details/invoice-details.component';
+import { isAuthGuardGuard } from './guards/is-auth-guard.guard';
+import { isNotAuthGuardGuard } from './guards/is-not-auth-guard.guard';
+import { welcomeRedirectGuard } from './guards/welcome-redirect.guard';
 
 export const routes: Routes = [
     {
         path: "",
-        component: WelcomeComponent
+        component: WelcomeComponent,
+        canActivate: [welcomeRedirectGuard]
     },
     {
         path: "login",
-        component: LoginComponent
+        component: LoginComponent,
+        canActivate: [isNotAuthGuardGuard]
     },
     {
         path: "signup",
-        component: SignupComponent
+        component: SignupComponent,
+        canActivate: [isNotAuthGuardGuard]
     },
     {
         path: "home",
-        component: HomeComponent
+        component: HomeComponent,
+        canActivate: [isAuthGuardGuard]
     },
     {
         path: "expenses",
-        component: ExpensesComponent
+        component: ExpensesComponent,
+        canActivate: [isAuthGuardGuard]
     },
     {
         path: "reports",
-        component: ReportsComponent
+        component: ReportsComponent,
+        canActivate: [isAuthGuardGuard]
     },
     {
         path: "profile",
-        component: ProfileComponent
+        component: ProfileComponent,
+        canActivate: [isAuthGuardGuard]
     },
     {
         path: "editInvoice",
-        component: InvoiceDetailsComponent
+        component: InvoiceDetailsComponent,
+        canActivate: [isAuthGuardGuard]
     },
 ];

@@ -10,7 +10,19 @@ import { AuthService } from '../../../services/auth.service';
   styleUrl: './nav-bar.component.css'
 })
 export class NavBarComponent {
-  constructor( private authService: AuthService, private router: Router){}
+
+logged : Boolean = false
+
+  constructor( private authService: AuthService, private router: Router){
+    
+    if (authService.loginResponse){
+      this.logged = true
+    } else {
+      this.logged = false
+    }
+  }
+
+
 
   logout(){
     this.authService.logout();

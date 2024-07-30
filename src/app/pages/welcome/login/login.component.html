@@ -1,4 +1,4 @@
-<app-welcome-nav-bar></app-welcome-nav-bar>
+<app-nav-bar></app-nav-bar>
 
 <div class="container">
   <div class="row justify-content-center">
@@ -9,7 +9,7 @@
         </div>
 
         <div class="card-body">
-          <form [formGroup]="form" (ngSubmit)="submitForm()">
+          <form [formGroup]="form" (ngSubmit)="submitLogin()">
             <div class="form-group">
               <label class="small mb-1" for="inputEmailAddress"
                 >Correo electrónico:</label
@@ -67,7 +67,7 @@
                 id="loginButton"
                 type="submit"
                 [disabled]="!form.valid"
-                (click)="submitForm()"
+                (click)="submitLogin()"
               >
                 Login
               </button>

@@ -1,3 +1,7 @@
 .container{
     min-height: 80vh;
 }
+.validatorSpan{
+    color: rgb(243, 75, 75);
+    font-style: italic;
+}
