@@ -1,17 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ContactService } from '../../../services/contact.service';
 import { RouterModule } from '@angular/router';
 import { NavBarComponent } from '../../../components/commons/nav-bar/nav-bar.component';
 
 @Component({
-  selector: 'app- Contact',
+  selector: 'app-contact',
   standalone: true,
-  imports: [RouterModule, NavBarComponent],
-  templateUrl: './contact.component.css',
-  styleUrl: './contact.component.css'
+  imports: [RouterModule, NavBarComponent], //
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.css']
 })
-
-export class  ContactComponent
+export class ContactComponent {
+  constructor(private contactService: ContactService) {}
 /*implements OnInit {
   ventas: any;
 
