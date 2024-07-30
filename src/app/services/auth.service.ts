@@ -50,4 +50,8 @@ export class AuthService {
     this.cookieService.delete('loginResponse');
     this.loginResponse = null;
   }
+
+  getUserInvoices(idUser: string | undefined) {
+    return this.http.get(`${this.url}/getInvoices/${idUser}`);
+  }
 }
