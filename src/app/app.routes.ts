@@ -10,6 +10,7 @@ import { InvoiceDetailsComponent } from './pages/home/invoice-details/invoice-de
 import { isAuthGuardGuard } from './guards/is-auth-guard.guard';
 import { isNotAuthGuardGuard } from './guards/is-not-auth-guard.guard';
 import { welcomeRedirectGuard } from './guards/welcome-redirect.guard';
+import { AddInvoiceComponent } from './pages/home/add-invoice/add-invoice.component';
 
 export const routes: Routes = [
     {
@@ -50,6 +51,16 @@ export const routes: Routes = [
     {
         path: "editInvoice",
         component: InvoiceDetailsComponent,
+        canActivate: [isAuthGuardGuard]
+    },
+    {
+        path: "addInvoice",
+        component: AddInvoiceComponent,
+        canActivate: [isAuthGuardGuard]
+    },
+    {
+        path: "addInvoice",
+        component: AddInvoiceComponent,
         canActivate: [isAuthGuardGuard]
     },
 ];

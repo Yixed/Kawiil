@@ -1,0 +1,71 @@
+<app-nav-bar></app-nav-bar>
+
+<h2>Añade tu factura</h2>
+
+<div class="row">
+  <div class="col-md-6 col-lg-6 col-sm-6">
+    <form [formGroup]="form">
+      <div class="p-3">
+        <label for="" class="form-label">Compañia</label>
+        <input
+          formControlName="company"
+          type="text"
+          class="form-control"
+          placeholder="Nombre"
+        />
+      </div>
+      <div class="p-3">
+        <label for="" class="form-label">Fecha</label>
+        <input
+          formControlName="creationDate"
+          type="text"
+          class="form-control"
+          placeholder="aaaa-mm-dd"
+        />
+      </div>
+      <div class="p-3">
+        <label for="" class="form-label">Nombre</label>
+        <input
+          formControlName="name"
+          type="text"
+          class="form-control"
+          placeholder="Descripcion"
+        />
+      </div>
+      <div class="p-3">
+        <label for="" class="form-label">Descripcion</label>
+        <input
+          formControlName="description"
+          type="text"
+          class="form-control"
+          placeholder="Imagen"
+        />
+      </div>
+      <div class="p-3">
+        <label for="" class="form-label">Costo</label>
+        <input
+          min="0"
+          max="5"
+          formControlName="amount"
+          type="number"
+          class="form-control"
+          placeholder="Opiniones"
+        />
+        @if(form.get("review")?.errors){
+        <span [style]="{ color: 'red' }">error en las reviews</span>
+        }
+      </div>
+
+      <a class="btn btn-warning" routerLink="/expenses" (click)="addinvoicebtn()">
+        Guardar
+      </a>
+    </form>
+  </div>
+
+  <div class="col-md-1 col-lg-1 d-none d-md-block">
+    <div class="separador"></div>
+  </div>
+  <div class="d-block d-sm-none">
+    <hr />
+  </div>
+</div>

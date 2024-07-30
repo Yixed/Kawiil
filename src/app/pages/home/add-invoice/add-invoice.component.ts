@@ -23,8 +23,7 @@ export class AddInvoiceComponent {
   addinvoice: Invoice | null = null;
   form!: FormGroup;
 
-  constructor(
-    private builder: FormBuilder,
+  constructor(private builder: FormBuilder, 
     private invoiceService: InvoiceService,
     private router: Router
   ) {
@@ -34,28 +33,21 @@ export class AddInvoiceComponent {
       name: new FormControl(null, []),
       description: new FormControl(null, []),
       amount: new FormControl(null, []),
-      file: new FormControl(null, []),
-    });
+      file: new FormControl("", []),
+     }) 
   }
 
+
   addinvoicebtn() {
-    console.log(this.form.value);
-    this.invoiceService
-      .addInvoice(
-        this.form.value.company,
-        this.form.value.creationDate,
-        this.form.value.name,
-        this.form.value.description,
-        this.form.value.amount,
-        this.form.value.file
-      )
-      .subscribe({
-        next: () => {
-          this.router.navigateByUrl('/expenses');
-        },
-        error: () => {
-          alert('Rellena todo el formulario');
-        },
-      });
+    console.log(this.form.value)
+    this.invoiceService.addInvoice(this.form.value.company, this.form.value.creationDate, this.form.value.name, this.form.value.description, this.form.value.amount, this.form.value.file).subscribe({
+      next: () => {
+        this.router.navigateByUrl("/login")
+      },
+      error: () =>{
+        alert ("Rellena todo el formulario")
+      }      
+    })
+    
   }
 }
