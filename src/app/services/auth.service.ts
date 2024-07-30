@@ -4,6 +4,7 @@ import { User } from '../interfaces/user';
 import { ParseSourceFile } from '@angular/compiler';
 import { CookieService } from 'ngx-cookie-service';
 import { LoginResponse } from '../interfaces/login-response';
+import { concat } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -12,10 +13,7 @@ export class AuthService {
   url: string = 'https://backkawiilbd-1.onrender.com/user';
   loginResponse: LoginResponse | null = null;
 
-  constructor(private http: HttpClient, private cookieService: CookieService) {
-    
-  }
-  
+  constructor(private http: HttpClient, private cookieService: CookieService) {}
 
   //Post para login, devuelve token if true
   login(email_: string, password_: string) {
@@ -43,8 +41,6 @@ export class AuthService {
     this.cookieService.set('loginResponse', JSON.stringify(loginResponse));
   }
 
-  
-
   //logout, borra los datos actuales de usuario
   logout() {
     this.cookieService.delete('loginResponse');
@@ -53,5 +49,17 @@ export class AuthService {
 
   getUserInvoices(idUser: string | undefined) {
     return this.http.get(`${this.url}/getInvoices/${idUser}`);
+  }
+
+  asignInvoice(idUser: string | undefined, idInvoice: String | undefined) {
+
+    //34288723962348962
+    //"_id": "386349834634589"
+    //METER ID INVOICE EN EL BODY
+    const body = {
+      "id": idInvoice
+    }
+
+    return this.http.put(`${this.url}/asignInvoice/${idUser}`, body)
   }
 }

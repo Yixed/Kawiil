@@ -22,11 +22,15 @@ export class AddInvoiceComponent {
   parametro: string | null = null;
   addinvoice: Invoice | null = null;
   form!: FormGroup;
+  responseInvoice: Object = {}
+  userId: string|undefined = this.authService.loginResponse?.user._id
+  invoiceId: String|undefined = this.invoiceService.invoiceResponse?._id
 
   constructor(private builder: FormBuilder, 
     private invoiceService: InvoiceService,
-    private router: Router
-  ) {
+    private authService: AuthService,
+    private router: Router) 
+    {
     this.form = builder.group({
       company: new FormControl(null, []),
       creationDate: new FormControl(null, []),
@@ -37,19 +41,20 @@ export class AddInvoiceComponent {
      }) 
   }
 
+   
 
   addinvoicebtn() {
     console.log(this.form.value)
     this.invoiceService.addInvoice(this.form.value.company, this.form.value.creationDate, this.form.value.name, this.form.value.description, this.form.value.amount, this.form.value.file).subscribe({
       next: (res) => {
-        const idInvoice = res
-        console.log(idInvoice)
 
-        //idInvoice = idInvoice._id
-        /// LLAMAR A FUNCION PARA ASIGNAR LA FACTURA
-
-        //this.asignInvoice( idUser, idInvoice)
+        //se guarda el valor de la factura en invoiceServie
+        this.invoiceService.saveInvoice(res as Invoice);
+        //guardo el id de la factura en este doc
+        this.invoiceId = this.invoiceService.invoiceResponse?._id
         
+        //Una vez se registra la factura(post), se asigna la factura al usuario(put)
+        this.asignInvoice()
       },
       error: () =>{
         alert ("Rellena todo el formulario")
@@ -60,14 +65,15 @@ export class AddInvoiceComponent {
 
   asignInvoice() {
 
-    // this.invoiceService.asignInvoice( idUser, idInvoice).subscribe({
-    //   next: () => {
-    //     this.asignInvoice()
-    //   },
-    //   error: () =>{
-    //     alert ("Rellena todo el formulario")
-    //   }      
-    // })
+    this.authService.asignInvoice( this.userId, this.invoiceId).subscribe({
+      next: (res) => {
+        console.log("asignar funciona: ", res)
+        this.router.navigate(['/expenses']);
+      },
+      error: (error) =>{
+        console.log("asignar no ha funcionado", error)
+      }      
+    })
     
   }
 }
