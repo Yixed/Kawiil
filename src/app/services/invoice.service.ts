@@ -17,7 +17,7 @@ export class InvoiceService {
     name: String,
     description: String,
     amount: number,
-    file: String
+    file: File
   ) {
     return this.http.post(`${this.url}/addInvoice`, {
       company: company,
@@ -29,7 +29,7 @@ export class InvoiceService {
     });
   }
 
-  getById(id: number) {
+  getById(id: string | null) {
     return this.http.get(this.url + '/' + id);
   }
 
@@ -40,5 +40,12 @@ export class InvoiceService {
     this.invoiceResponse = invoiceResponse;
   }
 
-  
+  deleteInvoice(id: String){
+    return this.http.delete(this.url + '/deleteInvoice/' + id);
+  }
+
+  updateInvoice(id: String, body: { id: String | undefined; company: any; creationDate: any; name: any; description: any; amount: any; file: any; }){
+    return this.http.put(this.url + '/updateInvoice/' + id, body);
+  }
+    
 }

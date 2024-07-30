@@ -13,7 +13,9 @@ export class AuthService {
   url: string = 'https://backkawiilbd-1.onrender.com/user';
   loginResponse: LoginResponse | null = null;
 
-  constructor(private http: HttpClient, private cookieService: CookieService) {}
+  constructor(private http: HttpClient, private cookieService: CookieService) {
+    this.loginResponse = JSON.parse(this.cookieService.get('loginResponse'));
+  }
 
   //Post para login, devuelve token if true
   login(email_: string, password_: string) {
@@ -21,6 +23,8 @@ export class AuthService {
       email: email_,
       password: password_,
     });
+
+    
   }
 
   signup(name: string, surname: string, email: string, pwd: string) {

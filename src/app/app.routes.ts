@@ -49,7 +49,7 @@ export const routes: Routes = [
         canActivate: [isAuthGuardGuard]
     },
     {
-        path: "editInvoice",
+        path: "editInvoice/:id",
         component: InvoiceDetailsComponent,
         canActivate: [isAuthGuardGuard]
     },

@@ -6,21 +6,30 @@
   <div class="col-md-6 col-lg-6 col-sm-6">
     <form [formGroup]="form">
       <div class="p-3">
-        <label for="" class="form-label">Nombre del producto</label>
+        <label for="" class="form-label">Compañia</label>
+        <input
+          formControlName="company"
+          type="text"
+          class="form-control"
+          placeholder="compañia"
+        />
+      </div>
+      <div class="p-3">
+        <label for="" class="form-label">Fecha</label>
+        <input
+          formControlName="creationDate"
+          type="text"
+          class="form-control"
+          placeholder="aaaa-mm-dd"
+        />
+      </div>
+      <div class="p-3">
+        <label for="" class="form-label">Nombre</label>
         <input
           formControlName="name"
           type="text"
           class="form-control"
-          placeholder="Nombre"
-        />
-      </div>
-      <div class="p-3">
-        <label for="" class="form-label">Precio</label>
-        <input
-          formControlName="price"
-          type="number"
-          class="form-control"
-          placeholder="Precio"
+          placeholder="referencia de la factura"
         />
       </div>
       <div class="p-3">
@@ -29,36 +38,37 @@
           formControlName="description"
           type="text"
           class="form-control"
-          placeholder="Descripcion"
+          placeholder="items y cantidad"
         />
       </div>
       <div class="p-3">
-        <label for="" class="form-label">Ruta imagen</label>
-        <input
-          formControlName="image"
-          type="text"
-          class="form-control"
-          placeholder="Imagen"
-        />
-      </div>
-      <div class="p-3">
-        <label for="" class="form-label">Opiniones</label>
+        <label for="" class="form-label">Costo</label>
         <input
           min="0"
           max="5"
-          formControlName="review"
+          formControlName="amount"
           type="number"
           class="form-control"
-          placeholder="Opiniones"
+          placeholder="coste + IVA"
         />
-        @if(form.get("review")?.errors){
-        <span [style]="{ color: 'red' }">error en las reviews</span>
-        }
+        
       </div>
 
-      <button [disabled]="form.valid === false" class="btn btn-warning">
-        Guardar
-      </button>
+      <!--
+      <div class="p-3">
+        <label for="" class="form-label">imagen de la factura</label>
+        <input
+          min="0"
+          max="5"
+          formControlName="file"
+          type="file"
+          class="form-control"
+          placeholder="imagen de la factura"
+        />
+      </div>-->
+      <div class="buttonContainer p-3">
+      <button class="btn btn-secondary" routerLink="/expenses"> Volver </button>
+      <a class="btn btn-warning" (click)="updateInvoicebtn()"> Guardar </a></div>
     </form>
   </div>
 

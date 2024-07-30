@@ -2,70 +2,82 @@
 
 <h2>Añade tu factura</h2>
 
-<div class="row">
-  <div class="col-md-6 col-lg-6 col-sm-6">
-    <form [formGroup]="form">
-      <div class="p-3">
-        <label for="" class="form-label">Compañia</label>
-        <input
-          formControlName="company"
-          type="text"
-          class="form-control"
-          placeholder="Nombre"
-        />
-      </div>
-      <div class="p-3">
-        <label for="" class="form-label">Fecha</label>
-        <input
-          formControlName="creationDate"
-          type="text"
-          class="form-control"
-          placeholder="aaaa-mm-dd"
-        />
-      </div>
-      <div class="p-3">
-        <label for="" class="form-label">Nombre</label>
-        <input
-          formControlName="name"
-          type="text"
-          class="form-control"
-          placeholder="Descripcion"
-        />
-      </div>
-      <div class="p-3">
-        <label for="" class="form-label">Descripcion</label>
-        <input
-          formControlName="description"
-          type="text"
-          class="form-control"
-          placeholder="Imagen"
-        />
-      </div>
-      <div class="p-3">
-        <label for="" class="form-label">Costo</label>
-        <input
-          min="0"
-          max="5"
-          formControlName="amount"
-          type="number"
-          class="form-control"
-          placeholder="Opiniones"
-        />
-        @if(form.get("review")?.errors){
-        <span [style]="{ color: 'red' }">error en las reviews</span>
-        }
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-lg-6 col-sm-6">
+      <form [formGroup]="form">
+        <div class="p-3">
+          <label for="" class="form-label">Compañia</label>
+          <input
+            formControlName="company"
+            type="text"
+            class="form-control"
+            placeholder="compañia"
+          />
+        </div>
+        <div class="p-3">
+          <label for="" class="form-label">Fecha</label>
+          <input
+            formControlName="creationDate"
+            type="text"
+            class="form-control"
+            placeholder="aaaa-mm-dd"
+          />
+        </div>
+        <div class="p-3">
+          <label for="" class="form-label">Nombre</label>
+          <input
+            formControlName="name"
+            type="text"
+            class="form-control"
+            placeholder="referencia de la factura"
+          />
+        </div>
+        <div class="p-3">
+          <label for="" class="form-label">Descripcion</label>
+          <input
+            formControlName="description"
+            type="text"
+            class="form-control"
+            placeholder="items y cantidad"
+          />
+        </div>
+        <div class="p-3">
+          <label for="" class="form-label">Costo</label>
+          <input
+            min="0"
+            max="5"
+            formControlName="amount"
+            type="number"
+            class="form-control"
+            placeholder="coste + IVA"
+          />
+          
+        </div>
+        <!--
+        <div class="p-3">
+          <label for="" class="form-label">imagen de la factura</label>
+          <input
+            min="0"
+            max="5"
+            formControlName="file"
+            type="file"
+            class="form-control"
+            placeholder="imagen de la factura"
+            (change)="onFileSelected($event)"
+          />
+        </div>-->
+        <div class="buttonContainer p-3">
+        <button class="btn btn-secondary" routerLink="/expenses"> Volver </button>
+        <a class="btn btn-warning" (click)="addinvoicebtn()"> Guardar </a></div>
+      </form>
+    </div>
 
-      <a class="btn btn-warning" (click)="addinvoicebtn()">
-        Guardar
-      </a>
-    </form>
-  </div>
-
-  <div class="col-md-1 col-lg-1 d-none d-md-block">
-    <div class="separador"></div>
-  </div>
-  <div class="d-block d-sm-none">
-    <hr />
+    <div class="col-md-1 col-lg-1 d-none d-md-block">
+      <div class="separador"></div>
+    </div>
+    <div class="d-block d-sm-none">
+      <hr />
+    </div>
   </div>
 </div>

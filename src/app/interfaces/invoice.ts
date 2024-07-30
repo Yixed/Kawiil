@@ -5,5 +5,5 @@ export interface Invoice {
   name: String;
   description: String;
   amount: Number;
-  file: String;
+  file: File;
 }

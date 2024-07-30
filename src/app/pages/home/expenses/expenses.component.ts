@@ -1,8 +1,9 @@
-import { RouterModule } from '@angular/router';
-import { Component } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
+import { Component, NgZone } from '@angular/core';
 import { NavBarComponent } from '../../../components/commons/nav-bar/nav-bar.component';
 import { Invoice } from '../../../interfaces/invoice';
 import { AuthService } from '../../../services/auth.service';
+import { InvoiceService } from '../../../services/invoice.service';
 
 
 @Component({
@@ -13,19 +14,11 @@ import { AuthService } from '../../../services/auth.service';
   styleUrl: './expenses.component.css',
 })
 export class ExpensesComponent {
-  // invoicesList = [
-  //   {
-  //     company: 'TECPESA',
-  //   },
-  //   {
-  //     company: 'FEFE',
-  //   },
-  // ];
   invoiceList: Invoice[] = [];
   responseInvoices: Object = {}
   
   
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private invoiceService: InvoiceService, private router: Router) {
 
     const userId: string|undefined = authService.loginResponse?.user._id
 
@@ -41,4 +34,21 @@ export class ExpensesComponent {
     });
   }
 
+
+  deleteInvoice(invoiceId: String){
+    console.log("deleteId: ", invoiceId)
+    this.invoiceService.deleteInvoice(invoiceId).subscribe({
+      next: (res) => {     
+        console.log("Delete response: ", res)
+        
+        //Navegamos a la misma ruta para actualizar la tabla
+        this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+          this.router.navigate(['/expenses']);
+        });
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
+  }
 }

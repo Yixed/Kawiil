@@ -1,13 +1,10 @@
 <app-nav-bar></app-nav-bar>
 
-
-
 <div class="containerBills">
-
   <div class="ContainerB">
     <div class="white_box_tittle list_header m-0 align-items-center">
       <div class="main-title mb-sm-15">
-        <h3 class="m-0 nowrap">Tus facturas </h3>
+        <h3 class="m-0 nowrap">Tus facturas</h3>
       </div>
       <div class="">
         <div class="serach_field-area2">
@@ -21,14 +18,22 @@
                 />
               </div>
 
-
-              <button class="btn btn-primary" type="submit" control-id="ControlID-4">Buscar</button>
-            
-            
+              <button
+                class="btn btn-primary"
+                type="submit"
+                control-id="ControlID-4"
+              >
+                Buscar
+              </button>
             </form>
-            
-            <a class="btn btn-primary" type="submit" control-id="ControlID-4" routerLink="/addInvoice">Añadir facturas</a>
 
+            <a
+              class="btn btn-primary"
+              type="submit"
+              control-id="ControlID-4"
+              routerLink="/addInvoice"
+              >Añadir facturas</a
+            >
           </div>
         </div>
       </div>
@@ -107,35 +112,33 @@
             </tr>
           </thead>
           <tbody>
-            
-           @for (item of invoiceList; track $index) {
+            @for (item of invoiceList; track $index) {
             <tr role="row" class="even">
               <th scope="row" tabindex="0" class="sorting_1">
                 <div class="patient_thumb d-flex align-items-center">
                   <div class="student_list_img mr_20">
                     <img src="img/patient/6.png" alt="" srcset="" />
                   </div>
-                  <p>{{item.company}}</p>
+                  <p>{{ item.company }}</p>
                 </div>
               </th>
-              <td>{{item.creationDate}}</td>
-              <td>{{item.name}}</td>
-              <td >{{item.description}}</td>
-              <td >
+              <td>{{ item.creationDate }}</td>
+              <td>{{ item.name }}</td>
+              <td>{{ item.description }}</td>
+              <td>
                 <div class="containerAmount">
-                  {{item.amount}}
-                <div class="containerButton">
+                  {{ item.amount }}
+                  <div class="containerButton">
                     <button class="btn btn-secondary" href="#">View</button>
-                    <a class="btn btn-secondary" routerLink="/editInvoice">Edit</a>
-                    <button class="btn btn-warning" href="#">Delete</button>
-                    <a class="nav-link" routerLink="/profile">Perfil</a>
-                    </div>
+                    <a class="btn btn-secondary" routerLink="/editInvoice/{{item._id}}"
+                      >Edit</a
+                    >
+                    <button class="btn btn-warning" (click)="deleteInvoice(item._id)">Delete</button>
                   </div>
-                
+                </div>
               </td>
             </tr>
-        }
-
+            }
           </tbody>
         </table>
       </div>
